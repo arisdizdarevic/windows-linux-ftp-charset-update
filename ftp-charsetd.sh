@@ -35,14 +35,15 @@
 # After that run:
 # systemctl daemon-reload
 # systemctl start ftp-charsetd.service
+# systemctl enable ftp-charsetd.service
 #
 ######################################################################################################
 
 GAP=20                                                  #How long to wait in seconds for checking
 LOGFILE='/var/log/pureftpd.log'                         #File to read FTP upload log files from
 CHARFROM=WINDOWS-1250                                   #Chacter from
-CHARTO='UTF8'                                   	#Charset to 
-LOGTOFILE='/var/log/pure-ftpd-correct-charset.log'	#File to post any charset changes to
+CHARTO='UTF8'                                   	    #Charset to 
+LOGTOFILE='/var/log/pure-ftpd-correct-charset.log'	    #File to post any charset changes to
 
 if ps ax | grep $0 | grep -v $$ | grep bash | grep -v grep
 then
