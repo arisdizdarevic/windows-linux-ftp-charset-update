@@ -37,6 +37,12 @@
 # systemctl start ftp-charsetd.service
 # systemctl enable ftp-charsetd.service
 #
+# Upon problem dos -> unix convert
+# /bin/bash^M: bad interpreter: No such file or directory
+#
+# run:
+# sed -i -e 's/\r$//' /usr/sbin/ftp-charsetd.sh
+#
 ######################################################################################################
 
 GAP=20                                                  #How long to wait in seconds for checking
