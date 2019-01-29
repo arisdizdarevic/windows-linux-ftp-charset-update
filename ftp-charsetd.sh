@@ -85,13 +85,14 @@ do
                         TL3=${TL2%:*}
                         TL4=${TL3##*:}
                         TL5=${TL4:4}
+                        TL5=${TL5//%20/ }
 
-                        REZ="$(file -i $TL5)"
+                        REZ="$(file -i "$TL5")"
 
                         if [[ $REZ == *"unknown-8bit"* ]]; then
                                 echo_time_log "$TL5 converted charset $CHARFROM -> $CHARTO" >> "$LOGTOFILE"
 
-                                KONV="$(iconv -f $CHARFROM -t $CHARTO $TL5)"
+                                KONV="$(iconv -f $CHARFROM -t $CHARTO "$TL5")"
                                 echo "$KONV" > "$TL5"
                                 fi
                         fi
